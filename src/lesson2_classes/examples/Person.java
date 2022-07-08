@@ -1,4 +1,4 @@
-package lesson2_classes;
+package lesson2_classes.examples;
 
 public class Person {
     private String firstName;
