@@ -2,13 +2,13 @@ package lesson2_classes.library;
 
 public class Book {
     private String name;
-    private String author;
+    private Author author;
     private int id;
     private int year;
     private int pages;
     private Section section;
 
-    public Book(String name, String author, int id, int year, int pages, Section section) {
+    public Book(String name, Author author, int id, int year, int pages, Section section) {
         this.name = name;
         this.author = author;
         this.id = id;
@@ -17,19 +17,15 @@ public class Book {
         this.section = section;
     }
 
-    public Book()
-    {
-
-    }
-
     String getInfo() {
         String info = "";
         info += "Название              " + name + "\n";
-        info += "Автор                 " + author + "\n";
+        info += "---Автор---           \n" + author.getAuthorInfo() + "\n";
+        info += "-----------\n";
         info += "Регистрационный номер " + id + "\n";
         info += "Год издания           " + year + "\n";
         info += "Кол-во страниц        " + pages + "\n";
-        info += "Раздел                " + section.sectionName + "\n";
+        info += "Раздел                " + section.sectionName;
 
         return info;
 
@@ -39,7 +35,7 @@ public class Book {
         this.name = name;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -57,5 +53,8 @@ public class Book {
 
     public void setSection(Section section) {
         this.section = section;
+    }
+    public String getName(){
+        return name;
     }
 }

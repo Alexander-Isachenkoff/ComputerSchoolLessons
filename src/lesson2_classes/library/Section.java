@@ -1,10 +1,13 @@
 package lesson2_classes.library;
 
-enum Section {
-    SCIENCE("Наука"), FANTASTIC("Фантастика"), BIOGRAPHY("Биография");
+
+public class Section {
     String sectionName;
 
     Section(String section) {
         this.sectionName = section;
+    }
+    public String getName(){
+        return sectionName;
     }
 }
