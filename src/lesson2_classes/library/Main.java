@@ -3,8 +3,7 @@ package lesson2_classes.library;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static lesson2_classes.library.Section.FANTASTIC;
-import static lesson2_classes.library.Section.SCIENCE;
+import static lesson2_classes.library.Section.*;
 
 /* Создать классовую модель для библиотеки:
 В библиотеке имеются книги.
@@ -17,46 +16,10 @@ import static lesson2_classes.library.Section.SCIENCE;
 */
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Books> book = new ArrayList<>();
-        ArrayList<Reader> readers = new ArrayList<>();
 
-        System.out.println("Запиши запись:");
-        var books = new Books();
-        System.out.println("Введи название книги:");
-        books.setName(scanner.next());
-        System.out.println("Введи имя автора:");
-        books.setAuthor(scanner.next());
-        System.out.println("Введи регистрационный номер:");
-        books.setId(scanner.nextInt());
-        System.out.println("Введи год издания:");
-        books.setYear(scanner.nextInt());
-        System.out.println("Введи кол-во страниц:");
-        books.setPages(scanner.nextInt());
-        boolean exit = false;
-        while (!exit){
-            System.out.println("1. Наука");
-            System.out.println("2. Фантастика");
-            int choice = readInt();
-            switch (choice){
-                case 1:
-                    books.setSection(SCIENCE);
-                    exit=true;
-                    break;
-                case 2:
-                    books.setSection(FANTASTIC);
-                    exit=true;
-                    break;
-                default:
-                    System.out.println("Не верная команда");
-                    break;
-            }
-        }
+        Book book = new Book("Моё вечное завоевание", "Лермонтов", 771981, 1997, 424, BIOGRAPHY);
 
-
-        books.add(books);
-
-        System.out.println(books.getInfo());
+        System.out.println(book.getInfo());
 
     }
     private static int readInt() {
@@ -70,6 +33,43 @@ public class Main {
             choice = readInt();
         }
         return choice;
+    }
+
+    private static Book createBookManual(){
+        System.out.println("Запиши запись:");
+        Scanner scanner = new Scanner(System.in);
+        Book book = new Book();
+
+        System.out.println("Введи название книги:");
+        book.setName(scanner.next());
+        System.out.println("Введи имя автора:");
+        book.setAuthor(scanner.next());
+        System.out.println("Введи регистрационный номер:");
+        book.setId(scanner.nextInt());
+        System.out.println("Введи год издания:");
+        book.setYear(scanner.nextInt());
+        System.out.println("Введи кол-во страниц:");
+        book.setPages(scanner.nextInt());
+        boolean exit = false;
+        while (!exit){
+            System.out.println("1. Наука");
+            System.out.println("2. Фантастика");
+            int choice = readInt();
+            switch (choice){
+                case 1:
+                    book.setSection(SCIENCE);
+                    exit=true;
+                    break;
+                case 2:
+                    book.setSection(FANTASTIC);
+                    exit=true;
+                    break;
+                default:
+                    System.out.println("Не верная команда");
+                    break;
+            }
+        }
+        return book;
     }
 
 }

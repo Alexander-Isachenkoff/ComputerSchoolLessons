@@ -1,6 +1,6 @@
 package lesson2_classes.library;
 
-public class Books {
+public class Book {
     private String name;
     private String author;
     private int id;
@@ -8,7 +8,7 @@ public class Books {
     private int pages;
     private Section section;
 
-    public Books() {
+    public Book(String name, String author, int id, int year, int pages, Section section) {
         this.name = name;
         this.author = author;
         this.id = id;
@@ -17,17 +17,20 @@ public class Books {
         this.section = section;
     }
 
+    public Book()
+    {
+
+    }
+
     String getInfo() {
         String info = "";
-        info += "Название " + name + "\n";
-        info += "Автор " + author + "\n";
-        info += "Регистрационный номер" + id + "\n";
-        info += "Год издания " + year + "\n";
-        info += "Кол-во страниц " + pages + "\n";
-        info += "Раздел " + section.sectionName + "\n";
+        info += "Название              " + name + "\n";
+        info += "Автор                 " + author + "\n";
+        info += "Регистрационный номер " + id + "\n";
+        info += "Год издания           " + year + "\n";
+        info += "Кол-во страниц        " + pages + "\n";
+        info += "Раздел                " + section.sectionName + "\n";
 
-        System.out.println("Добавьте книгу");
-        System.out.println("Введите название:");
         return info;
 
     }
@@ -54,8 +57,5 @@ public class Books {
 
     public void setSection(Section section) {
         this.section = section;
-    }
-
-    public void add(Books books) {
     }
 }
