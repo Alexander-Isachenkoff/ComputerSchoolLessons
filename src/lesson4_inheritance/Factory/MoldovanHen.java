@@ -1,6 +1,9 @@
 package lesson4_inheritance.Factory;
 
 public class MoldovanHen extends Hen{
+    public MoldovanHen(int countOfEggsPerMonth, String description) {
+        super(countOfEggsPerMonth, description);
+    }
 
     @Override
     public int getCountOfEggsPerMonth(){
@@ -9,7 +12,7 @@ public class MoldovanHen extends Hen{
 
     @Override
     public String getDescription(){
-        return super.getDescription() + "Моя страна - " + Country.MOLDOVA.countryName + ". Я несу " + getCountOfEggsPerMonth() + "яиц в месяц";
-
+        System.out.println( getDescription() + "Моя страна - " + Country.MOLDOVA + ". Я несу " + getCountOfEggsPerMonth() + "яиц в месяц");
+        return getDescription();
     }
 }
