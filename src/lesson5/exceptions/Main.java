@@ -1,4 +1,4 @@
-package lesson5_exceptions;
+package lesson5.exceptions;
 
 import java.util.Scanner;
 
