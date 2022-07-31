@@ -6,11 +6,11 @@ public class Avto {
     private TypeKPP typeKPP;
     private Engine engine;
 
-    public Avto (String mod, double weight, TypeKPP typeKPP, Engine.Type type, double power, double volume) {
+    public Avto (String mod, double weight, TypeKPP typeKPP, String engineNumber, Engine.Type type, double power, double volume) {
         this.mod = mod;
         this.weight = weight;
         this.typeKPP = typeKPP;
-        this.engine = new Engine(type, power, volume);
+        this.engine = new Engine(engineNumber, type, power, volume);
     }
 
     String getInfo() {
@@ -18,9 +18,9 @@ public class Avto {
         info += "Модель        " + mod + "\n";
         info += "Масса         " + weight + "\n";
         info += "Тип КПП       " + typeKPP.TypeKPPName + "\n";
-        info += "Тип двигателя " + engine.type.TypeName + "\n";
-        info += "Мощность      " + engine.power + "\n";
-        info += "Объём         " + engine.volume + "\n";
+        info += "Тип двигателя " + engine.getType().TypeName + "\n";
+        info += "Мощность      " + engine.getPower() + "\n";
+        info += "Объём         " + engine.getVolume() + "\n";
         return info;
     }
 
