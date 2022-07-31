@@ -35,15 +35,6 @@ public class MainFormController {
     }
 
     @FXML
-    private void onAdd() throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/addCar-form.fxml"));
-        stage.setScene(new Scene(loader.load()));
-        MainFormController controller = loader.getController();
-        stage.show();
-    }
-
-    @FXML
     private void onAddEngine() throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/addEngine-form.fxml"));

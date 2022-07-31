@@ -39,7 +39,7 @@
                      <children>
                         <HBox spacing="8.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#onAdd" text="Добавить" />
+                              <Button mnemonicParsing="false" text="Добавить" />
                               <Button mnemonicParsing="false" text="Удалить" />
                               <Button mnemonicParsing="false" text="Изменить" />
                            </children>
